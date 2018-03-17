@@ -11,7 +11,7 @@ Borrower::Borrower()
 Borrower::Borrower(int borrowerID, Book *borrowedBooks)
 	:maxAmountOfBooksBorrowed(borrowerID), booksBorrowed(borrowedBooks)
 {
-	maxAmountOfBooksBorrowed = 5;
+	maxAmountOfBooksBorrowed = 3;
 
 	Book empty("N/A", "N/A", 0);
 
@@ -45,6 +45,15 @@ void Borrower::takeBook(Book bToAdd)
 	}
 	else
 	{
-		cout << "The library is FULL!" << endl;
+		cout << "This person can't borrow any more books!" << endl;
+	}
+}
+
+void Borrower::showBooks()
+{
+	Book temp;
+	for (int i = 0; i < maxAmountOfBooksBorrowed; i++)
+	{
+		booksBorrowed[i].getBookInfo();
 	}
 }
