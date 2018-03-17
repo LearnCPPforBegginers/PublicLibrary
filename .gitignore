@@ -33,3 +33,10 @@
 
 */Debug/
 */.vs/
+*.txt
+*.sln
+.vs/
+Debug/
+*.vcxproj
+*.filters
+*.user

@@ -1,4 +1,0 @@
-﻿1>------ Build started: Project: PublicLibrary, Configuration: Debug Win32 ------
-1>main.cpp
-1>PublicLibrary.vcxproj -> D:\Development\CPP\PublicLibrary\PublicLibrary\Debug\PublicLibrary.exe
-========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
