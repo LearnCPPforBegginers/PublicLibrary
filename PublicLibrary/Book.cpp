@@ -29,11 +29,14 @@ Book::~Book()
 
 void Book::getBookInfo() const
 {
-	cout << "\nUnique ID: " << bookUniqueID << endl;
-	cout << "Name:   " << bookName << endl;
-	cout << "Author: " << bookAuthor << endl;
-	cout << "Year:   " << bookYear << endl;
-	cout << endl;
+	if (bookName != "N/A")
+	{
+		cout << "\nUnique ID: " << bookUniqueID << endl;
+		cout << "Name:   " << bookName << endl;
+		cout << "Author: " << bookAuthor << endl;
+		cout << "Year:   " << bookYear << endl;
+		cout << endl;
+	}
 }
 
 bool Book::operator==(const Book & b) const

@@ -73,14 +73,16 @@ void Library::showBook(int id) // we need to search in book archive for (id-1) b
 	}
 }
 
-void Library::takeBookFromLibrary(int id)
+Book Library::takeBookFromLibrary(int id)
 {
-	Book empty("N/A", "N/A", 0);
+	Book empty("N/A", "N/A", 0), tempBook("N/A", "N/A", 0);
 	if (bookArchive[id - 1] != empty) // we need to verify if there is a book at given location so we don't change the number of books if location is empty
 	{
 		bookArchive[id - 1].getBookInfo();
+		tempBook = bookArchive[id - 1];
 		bookArchive[id - 1] = empty;
 		nrOfBooks--;
+		return tempBook;
 	}
 	else
 	{

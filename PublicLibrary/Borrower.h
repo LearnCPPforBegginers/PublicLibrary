@@ -9,9 +9,9 @@ class Borrower :
 {
 public:
 	Borrower();
-	Borrower(int maxBooks, Book *booksBorrowed);
+	Borrower(int borrowerID, Book *booksBorrowed);
 	~Borrower();
-	void takeBook(Book bToAdd);
+	void lendBook(Book bToAdd);
 	void showBooks();
 
 	Book returnBook(int bookID) { return booksBorrowed[bookID]; }

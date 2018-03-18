@@ -4,14 +4,16 @@
 
 using namespace std;
 
+
 Borrower::Borrower()
 {
 }
 
 Borrower::Borrower(int borrowerID, Book *borrowedBooks)
-	:maxAmountOfBooksBorrowed(borrowerID), booksBorrowed(borrowedBooks)
+	:borrowerID(borrowerID), booksBorrowed(borrowedBooks)
 {
-	maxAmountOfBooksBorrowed = 3;
+	maxAmountOfBooksBorrowed = 7;
+	nrOfBooksBorrowed = 0;
 
 	Book empty("N/A", "N/A", 0);
 
@@ -28,7 +30,7 @@ Borrower::~Borrower()
 	delete [] booksBorrowed;
 }
 
-void Borrower::takeBook(Book bToAdd)
+void Borrower::lendBook(Book bToAdd)
 {
 	Book empty("N/A", "N/A", 0);
 	if (nrOfBooksBorrowed < maxAmountOfBooksBorrowed)
@@ -45,13 +47,12 @@ void Borrower::takeBook(Book bToAdd)
 	}
 	else
 	{
-		cout << "This person can't borrow any more books!" << endl;
+		cout << "This person can't borrow any more books! " << maxAmountOfBooksBorrowed << endl;
 	}
 }
 
 void Borrower::showBooks()
 {
-	Book temp;
 	for (int i = 0; i < maxAmountOfBooksBorrowed; i++)
 	{
 		booksBorrowed[i].getBookInfo();
