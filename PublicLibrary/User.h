@@ -11,6 +11,7 @@ public:
 	~User();
 	string getFirstName() const { return userFirstName; }
 	string getLastName() const { return userLastName; }
+	void setName(string firstName, string lastName);
 
 private:
 	string userFirstName;

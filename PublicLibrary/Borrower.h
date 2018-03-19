@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 #include "User.h"
 #include "Book.h"
 
@@ -9,17 +10,17 @@ class Borrower :
 {
 public:
 	Borrower();
-	Borrower(int borrowerID, Book *booksBorrowed);
+	Borrower(int borrowerID, Book *borrowedBooks);
 	~Borrower();
-	void lendBook(Book bToAdd);
 	void showBooks();
 
 	Book returnBook(int bookID) { return booksBorrowed[bookID]; }
 
+protected:
+	int maxBooksBorrowed;
+	int nrOfBooksBorrowed;
+	Book *booksBorrowed;
+
 private:
 	int borrowerID;
-	int maxAmountOfBooksBorrowed;
-	int nrOfBooksBorrowed;
-
-	Book *booksBorrowed;
 };

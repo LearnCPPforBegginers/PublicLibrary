@@ -87,6 +87,7 @@ Book Library::takeBookFromLibrary(int id)
 	else
 	{
 		cout << "There is no book in the specified location!\n" << endl;
+		return empty;
 	}
 }
 

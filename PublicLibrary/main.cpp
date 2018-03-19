@@ -10,7 +10,6 @@ using namespace std;
 
 int main()
 {
-	int id = 1;
 	Book book;
 	Librarian librarian;
 
@@ -20,15 +19,21 @@ int main()
 	const Book book4("4th Book", "4th Author", 2003);
 	
 	Library lib("Book World", &book);
-	Borrower br(1, &book);
+	Borrower br;
 
 	lib.addBook(book1);
 	lib.addBook(book2);
 	lib.addBook(book3);
 	lib.addBook(book4);
 	
-	br.lendBook(lib.takeBookFromLibrary(1));
-	br.showBooks();
+	br.setName("Jhon", "Smith");
+	
+	librarian.lendBook(lib.takeBookFromLibrary(1));
+	librarian.showBooks();
 
+	lib.showBook(1);
+
+	cout << br.getFirstName() << endl;
 	return 0;
+
 }

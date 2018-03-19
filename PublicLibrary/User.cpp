@@ -17,3 +17,9 @@ User::User(string firstName, string lastName)
 User::~User()
 {
 }
+
+void User::setName(string firstName, string lastName)
+{
+	userFirstName = firstName;
+	userLastName = lastName;
+}
