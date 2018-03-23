@@ -8,6 +8,6 @@ class Librarian :
 public:
 	Librarian();
 	~Librarian();
-	void lendBook(Book bToAdd);
+	void lendBook(Borrower &toBorrower, Book bToAdd);
 };
 

@@ -13,14 +13,14 @@ public:
 	Borrower(int borrowerID, Book *borrowedBooks);
 	~Borrower();
 	void showBooks();
+	Book returnBook(int bookID);
 
-	Book returnBook(int bookID) { return booksBorrowed[bookID]; }
-
-protected:
+	int borrowerID;
 	int maxBooksBorrowed;
 	int nrOfBooksBorrowed;
 	Book *booksBorrowed;
 
 private:
-	int borrowerID;
+
+	
 };

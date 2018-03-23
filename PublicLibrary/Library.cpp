@@ -69,7 +69,6 @@ void Library::showBook(int id) // we need to search in book archive for (id-1) b
 	else
 	{
 		cout << "There is no book stored in this location!\n" << endl;
-		cout << "nrOfBooks = " << nrOfBooks << endl;
 	}
 }
 

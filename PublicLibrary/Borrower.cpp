@@ -16,9 +16,8 @@ Borrower::Borrower(int borrowerID, Book *borrowedBooks)
 	Book empty("N/A", "N/A", 0);
 	
 	maxBooksBorrowed = 3;
+	
 	booksBorrowed = new Book[maxBooksBorrowed];
-
-
 	for (int i = 0; i < maxBooksBorrowed; i++)
 	{
 		booksBorrowed[i] = empty;
@@ -37,4 +36,9 @@ void Borrower::showBooks()
 	{
 		booksBorrowed[i].getBookInfo();
 	}
+}
+
+Book Borrower::returnBook(int bookID)
+{
+	return booksBorrowed[bookID];
 }

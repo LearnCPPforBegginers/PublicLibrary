@@ -5,6 +5,7 @@
 
 Librarian::Librarian()
 {
+
 }
 
 
@@ -13,17 +14,17 @@ Librarian::~Librarian()
 
 }
 
-void Librarian::lendBook(Book bToAdd)
+void Librarian::lendBook(Borrower &toBorrower, Book bToAdd)
 {
 	Book empty("N/A", "N/A", 0);
-	if (nrOfBooksBorrowed < maxBooksBorrowed)
+	if (toBorrower.nrOfBooksBorrowed < toBorrower.maxBooksBorrowed)
 	{
-		for (int i = 0; i < maxBooksBorrowed; i++) // checks for the first empty spot in our database and places book there
+		for (int i = 0; i < toBorrower.maxBooksBorrowed; i++) // checks for the first empty spot in our database and places book there
 		{
-			if (booksBorrowed[i] == empty)
+			if (toBorrower.booksBorrowed[i] == empty)
 			{
-				booksBorrowed[i] = bToAdd;
-				nrOfBooksBorrowed++;
+				toBorrower.booksBorrowed[i] = bToAdd;
+				toBorrower.nrOfBooksBorrowed++;
 				break;
 			}
 		}

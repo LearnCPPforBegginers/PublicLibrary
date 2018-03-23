@@ -13,27 +13,23 @@ int main()
 	Book book;
 	Librarian librarian;
 
-	const Book book1("1st Book", "1st Author", 2000);
-	const Book book2("2nd Book", "2nd Author", 2001);
-	const Book book3("3rd Book", "3rd Author", 2002);
-	const Book book4("4th Book", "4th Author", 2003);
+	Book book1("1st Book", "1st Author", 2000);
+	Book book2("2nd Book", "2nd Author", 2001);
+	Book book3("3rd Book", "3rd Author", 2002);
+	Book book4("4th Book", "4th Author", 2003);
 	
 	Library lib("Book World", &book);
-	Borrower br;
-
+	Borrower br(1, &book);
 	lib.addBook(book1);
 	lib.addBook(book2);
 	lib.addBook(book3);
 	lib.addBook(book4);
 	
-	br.setName("Jhon", "Smith");
-	
-	librarian.lendBook(lib.takeBookFromLibrary(1));
-	librarian.showBooks();
+	librarian.lendBook(br, lib.takeBookFromLibrary(1));
+	br.showBooks();
 
 	lib.showBook(1);
 
-	cout << br.getFirstName() << endl;
 	return 0;
 
 }
